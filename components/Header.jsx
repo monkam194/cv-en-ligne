@@ -4,6 +4,7 @@ import {Button} from "./ui/button";
 
 // components
 import { Nav } from './Nav';
+import MobileNav from './MobileNav';
 
 export const Header = () => {
   return (
@@ -22,8 +23,10 @@ export const Header = () => {
             <Button>Hire</Button>
           </Link>
         </div>
-        {/* mabile nav */}
-        <div className="xl:hidden">mobile nav</div>
+        {/* mobile nav */}
+        <div className="xl:hidden">
+          <MobileNav />
+        </div>
       </div>
     </header>
   )
