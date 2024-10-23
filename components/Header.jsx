@@ -1,15 +1,15 @@
-import React from 'react'
+import React from "react";
 import Link from "next/Link";
-import {Button} from "./ui/button";
+import { Button } from "./ui/button";
 
 // components
-import { Nav } from './Nav';
-import MobileNav from './MobileNav';
+import { Nav } from "./Nav";
+import MobileNav from "./MobileNav";
 
 export const Header = () => {
   return (
-    <header className = "py-8 xl:py-12 text-white">
-      <div className = "container mx-auto flex justify-between items-center">
+    <header className="py-8 xl:py-12 text-white">
+      <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href="/">
           <h1 className="text-4xl font-semibold">
@@ -20,7 +20,7 @@ export const Header = () => {
         <div className="hidden xl:flex items-center gap-8">
           <Nav />
           <Link href="/contact">
-            <Button>Hire</Button>
+            <Button>Recrutez moi</Button>
           </Link>
         </div>
         {/* mobile nav */}
@@ -29,5 +29,5 @@ export const Header = () => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
