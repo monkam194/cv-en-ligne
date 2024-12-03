@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -16,7 +17,7 @@ const links = [
     path: "/resume",
   },
   {
-    name: "Experience",
+    name: "work",
     path: "/work",
   },
   {
@@ -25,7 +26,7 @@ const links = [
   },
 ];
 
-export const Nav = () => {
+const Nav = () => {
   const pathname = usePathname();
   return (
     <nav className="flex gap-8">
@@ -45,3 +46,5 @@ export const Nav = () => {
     </nav>
   );
 };
+
+export default Nav;
