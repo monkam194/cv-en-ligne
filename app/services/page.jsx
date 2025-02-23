@@ -6,32 +6,32 @@ import Link from "next/link";
 const services = [
   {
     num: "01",
-    title: "Web Development",
+    title: "Développement d'Applications",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Création d’applications web et mobiles en utilisant les technologies et pratiques les plus optimisées, garantissant performance, évolutivité et expérience utilisateur fluide.",
     href: "",
   },
   {
     num: "02",
-    title: "UI/UX Design",
+    title: "Analyse de Données",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Exploitation des meilleures pratiques et outils avancés pour l’analyse approfondie des données, favorisant la prise de décision éclairée grâce à des insights pertinents.",
     href: "",
   },
   {
     num: "03",
-    title: "Logo Design",
+    title: "DevOps",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Mise en place des processus DevOps pour assurer l’automatisation, l’intégration continue et le déploiement rapide, tout en garantissant la fiabilité des systèmes.",
     href: "",
   },
   {
     num: "04",
-    title: "SEO",
+    title: "Sécurisation des Données",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Conception de modèles sécurisés pour la transmission de données sensibles, notamment via l’utilisation de tokens JWT et les standards de sécurité modernes.",
     href: "",
-  },
+  }
 ];
 
 import { motion } from "framer-motion";

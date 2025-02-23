@@ -22,38 +22,39 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "frontend",
-    title: "project 1",
+    category: "backend",
+    title: "Start Compta",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
+      "Application de gestion comptable développée avec C# et WPF. Fonctionnalités pour la gestion des factures et des écritures comptables, intégration PostgreSQL et Docker.",
+    stack: [{ name: "C#" }, { name: "WPF" }, { name: "PostgreSQL" }, { name: "Docker" }],
     image: "/assets/work/thumb1.png",
     live: "",
     github: "",
   },
   {
     num: "02",
-    category: "fullstack",
-    title: "project 2",
+    category: "frontend",
+    title: "CV en ligne",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
+      "CV en ligne créé avec React.js et Next.js. Design moderne avec Tailwind CSS et déploiement.",
+    stack: [{ name: "React.js" }, { name: "Next.js" }, { name: "Tailwind CSS" }],
     image: "/assets/work/thumb2.png",
-    live: "",
-    github: "",
+    live: "https://monkam-cv.com",
+    github: "https://github.com/monkam194/cv-en-ligne",
   },
   {
     num: "03",
-    category: "frontend",
-    title: "project 3",
+    category: "fullstack",
+    title: "Site de covoiturage",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }],
+      "Site web de covoiturage développé avec PHP et Laravel. Gestion des trajets, intégration des bases de données MySQL et interface utilisateur responsive.",
+    stack: [{ name: "PHP" }, { name: "Laravel" }, { name: "MySQL" }],
     image: "/assets/work/thumb3.png",
-    live: "",
-    github: "",
+    live: "https://covoiturage.com",
+    github: "https://github.com/monkam194/QR-TRAVEL-main",
   },
 ];
+
 
 const Work = () => {
   const [project, setProject] = useState(projects[0]);

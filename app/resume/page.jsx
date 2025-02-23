@@ -1,177 +1,146 @@
 "use client";
 
-import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaFigma,
-  FaNodeJs,
-} from "react-icons/fa";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs, FaFigma, FaDocker, FaGitAlt } from "react-icons/fa";
 
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 
-// about data
-const about = {
-  title: "About me",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
-  info: [
-    {
-      fieldName: "Name",
-      fieldValue: "Luke Coleman",
-    },
-    {
-      fieldName: "Phone",
-      fieldValue: "(+40) 321 654 678",
-    },
-    {
-      fieldName: "Experience",
-      fieldValue: "12+ Years",
-    },
-    {
-      fieldName: "Skype",
-      fieldValue: "luke.01",
-    },
-    {
-      fieldName: "Nationality",
-      fieldValue: "American",
-    },
-    {
-      fieldName: "Email",
-      fieldValue: "luke.01@gmail.com",
-    },
-    {
-      fieldName: "Freelance",
-      fieldValue: "Available",
-    },
-    {
-      fieldName: "Languages",
-      fieldValue: "English, Spanish",
-    },
-  ],
-};
 
-// experience data
+import { SiNextdotjs, SiTailwindcss, SiPhp, SiCsharp, SiPostgresql, SiWordpress } from "react-icons/si";
+
+
+
 const experience = {
   icon: "/assets/resume/badge.svg",
-  title: "My experience",
+  title: "Mon expérience",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "Passionné par le développement et la résolution de problèmes grâce aux nouvelles technologies, je suis en quête d’une alternance pour poursuivre mon master en ingénierie logicielle.",
   items: [
     {
-      company: "Tech Solutions Inc.",
-      position: "Full Stack Developer",
-      duration: "2022 - Present",
+      company: "Projet personnel",
+      position: "Création de mon CV en ligne",
+      duration: "2025",
+      details: [
+        "Création d'une application web de CV interactif avec React.js et Next.js.",
+        "Utilisation de Tailwind CSS pour un design moderne et responsive.",
+        "Déploiement et gestion du projet sur GitHub."
+      ],
     },
     {
-      company: "Web Design Studio",
-      position: "Front-End Developer Intern",
-      duration: "Summer 2021",
+      company: "NavXpert",
+      position: "Développeur back-end",
+      duration: "Mars - Juin 2024",
+      details: [
+        "Développement d'une API avec ASP.NET et C#.",
+        "Intégration de l'API de la SNCF et des données de transport en commun fournies par Île-de-France Mobilités.",
+        "Développement front-end avec React.js pour des visualisations interactives d'itinéraires."
+      ],
     },
     {
-      company: "E-commerce Startup",
-      position: "Freelance Web Developer",
-      duration: "2020 - 2021",
+      company: "Start Compta",
+      position: "Développeur back-end",
+      duration: "Mars - Juin 2024",
+      details: [
+        "Développement de fonctionnalités back-end d'une application de comptabilité en C# et WPF.",
+        "Gestion des environnements de développement avec Docker.",
+        "Gestion des données utilisateurs avec PostgreSQL.",
+        "Coordination de projet avec Jira et collaboration via GitLab."
+      ],
     },
     {
-      company: "Tech Academy",
-      position: "Teaching Assistant",
-      duration: "2019 - 2020",
-    },
-    {
-      company: "Digital Agency",
-      position: "UI/UX Designer",
-      duration: "2018 - 2019",
-    },
-    {
-      company: "Software Development Firm",
-      position: "Junior Developer",
-      duration: "2017 - 2018",
+      company: "Colette Club",
+      position: "Formateur invité",
+      duration: "2024",
+      details: [
+        "Formation d'une trentaine de membres à la création de blogs personnels avec WordPress."
+      ],
     },
   ],
 };
 
-// education data
+// données sur l'éducation
 const education = {
   icon: "/assets/resume/cap.svg",
-  title: "My education",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+  title: "Mon éducation",
+  description: "Parcours académique en ingénierie logicielle et informatique.",
   items: [
     {
-      institution: "Online Course Platform",
-      degree: "Full Stack Web Development Bootcamp",
-      duration: "2023",
+      institution: "ESIEA Ivry-sur-Seine, France",
+      degree: "Semestre 4 - Ingénierie logicielle",
+      duration: "2024 - Présent",
     },
     {
-      institution: "Codecademy",
-      degree: "Front-end Track",
-      duration: "2022",
+      institution: "IUT Douala, Cameroun",
+      degree: "Licence en génie logiciel",
+      duration: "2020 - 2023",
     },
     {
-      institution: "Online Course",
-      degree: "Programming Course",
-      duration: "2020 - 2021",
-    },
-    {
-      institution: "Tech Institute",
-      degree: "Certified Web Developer",
-      duration: "2019",
-    },
-    {
-      institution: "Design School",
-      degree: "Diploma in Graphic Design",
-      duration: "2016 - 2018",
-    },
-    {
-      institution: "Community College",
-      degree: "Associate Degree in Computer Science",
-      duration: "2014 - 2016",
+      institution: "IUT Douala, Cameroun",
+      degree: "DUT en génie informatique",
+      duration: "2020 - 2023",
     },
   ],
 };
 
-// skills data
+// données sur les compétences
 const skills = {
-  title: "My skills",
+  title: "Mes compétences",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "Compétences techniques et humaines acquises au fil de mon parcours académique et professionnel.",
   skillList: [
     {
       icon: <FaHtml5 />,
-      name: "html 5",
+      name: "HTML 5",
     },
     {
       icon: <FaCss3 />,
-      name: "css 3",
+      name: "CSS 3 (Bootstrap, Tailwind CSS)",
     },
     {
       icon: <FaJs />,
-      name: "javascript",
+      name: "JavaScript (React + TypeScript)",
     },
     {
       icon: <FaReact />,
-      name: "react.js",
+      name: "React.js",
     },
     {
       icon: <SiNextdotjs />,
-      name: "next.js",
-    },
-    {
-      icon: <SiTailwindcss />,
-      name: "tailwind.css",
+      name: "Next.js",
     },
     {
       icon: <FaNodeJs />,
-      name: "node.js",
+      name: "Node.js",
+    },
+    {
+      icon: <FaDocker />,
+      name: "Docker",
     },
     {
       icon: <FaFigma />,
-      name: "figma",
+      name: "Figma",
+    },
+    {
+      icon: <SiPhp />,
+      name: "PHP (Laravel)",
+    },
+    {
+      icon: <SiCsharp />,
+      name: "C# (ASP.NET, WPF, .NET MAUI)",
+    },
+    {
+      icon: <FaGitAlt />,
+      name: "Git (GitHub, GitLab, Bitbucket)",
+    },
+    {
+      icon: <SiPostgresql />,
+      name: "PostgreSQL, MySQL",
+    },
+    {
+      icon: <SiWordpress />,
+      name: "WordPress",
     },
   ],
 };
+
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -204,7 +173,6 @@ const Resume = () => {
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
-            <TabsTrigger value="about">About me</TabsTrigger>
           </TabsList>
 
           {/* content */}
@@ -305,31 +273,7 @@ const Resume = () => {
               </div>
             </TabsContent>
 
-            {/* about */}
-            <TabsContent
-              value="about"
-              className="w-full text-center xl:text-left"
-            >
-              <div className="flex flex-col gap-[30px]">
-                <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                  {about.description}
-                </p>
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
-                  {about.info.map((item, index) => {
-                    return (
-                      <li
-                        key={index}
-                        className="flex items-center justify-center xl:justify-start gap-4"
-                      >
-                        <span className="text-white/60">{item.fieldName}</span>
-                        <span className="text-xl">{item.fieldValue}</span>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </TabsContent>
+            
           </div>
         </Tabs>
       </div>

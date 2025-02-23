@@ -5,6 +5,7 @@ import { FiDownload } from "react-icons/fi";
 import Social from "@/components/Social";
 import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -24,17 +25,18 @@ const Home = () => {
             </p>
             {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <Button
-                // as="a"
-                href="/CVJose.pdf"
-                download
-                variant="outline"
-                size="lg"
-                className="uppercase flex items-center gap-2"
+            <Link
+              href="/CVJose.pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer" // Bonnes pratiques pour la sécurité
+              variant="outline"
+              size="lg"
+              className="uppercase flex items-center gap-2 border border-accent rounded-lg px-4 py-2 text-lg text-accent hover:bg-accent hover:text-primary transition-all duration-500"
               >
-                <span>Télecharger mon CV</span>
-                <FiDownload className="text-xl" />
-              </Button>
+              <span>Télecharger mon CV</span>
+              <FiDownload className="text-xl" />
+            </Link>
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"
