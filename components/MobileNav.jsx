@@ -12,7 +12,7 @@ const links = [
   },
   {
     name: "Mon IA",
-    path: "/AI",
+    path: "/ai",
   },
   {
     name: "Compétences",
