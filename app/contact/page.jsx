@@ -62,7 +62,7 @@ const Contact = () => {
                 <Input type="email" placeholder="Adresse email" />
                 <Input type="tel" placeholder="Numéro de téléphone" />
               </div>
-              {/* select */}
+              {/* select
               <Select>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Choisissez un service" />
@@ -76,7 +76,7 @@ const Contact = () => {
                     <SelectItem value="wordpress">Création de site WordPress</SelectItem>
                   </SelectGroup>
                 </SelectContent>
-              </Select>
+              </Select> */}
               {/* textarea */}
               <Textarea
                 className="h-[200px]"

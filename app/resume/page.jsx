@@ -84,7 +84,7 @@ const education = {
 const skills = {
   title: "Mes compétences",
   description:
-    "Compétences techniques et humaines acquises au fil de mon parcours académique et professionnel.",
+    "Compétences techniques acquises au fil de mon parcours académique et professionnel.",
   skillList: [
     {
       icon: <FaHtml5 />,
