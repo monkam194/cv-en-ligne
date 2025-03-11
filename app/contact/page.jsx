@@ -50,7 +50,7 @@ const Contact = () => {
       setSuccessMessage("Votre message a été envoyé avec succès !");
       setFormData({ prenom: "", nom: "", email: "", telephone: "", message: "" });
     } catch (error) {
-      console.error("Erreur lors de l'envoi :", error);
+      console.error("Erreur lors de l&apos;envoi :", error);
     }
   };
 
@@ -67,7 +67,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
               <h3 className="text-4xl text-accent">Travaillons ensemble</h3>
               <p className="text-white/60">
-                Vous avez un projet ou une idée ? N'hésitez pas à me contacter, je serai ravi d'en discuter avec vous.
+                Vous avez un projet ou une idée ? N&apos;hésitez pas à me contacter, je serai ravi d&apos;en discuter avec vous.
               </p>
 
               {/* Inputs */}
