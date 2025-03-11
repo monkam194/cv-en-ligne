@@ -7,6 +7,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
+const API_URL = "https://mon-api-aspnet-f2ezcsc9chgag6bm.canadacentral-01.azurewebsites.net/api/GroqChat/send-message"; // Remplace par l'URL de ton API ASP.NET
+
 const DEFAULT_MESSAGES = [
   {
     type: "ai",
@@ -17,24 +19,38 @@ const DEFAULT_MESSAGES = [
 export function InteractiveCV() {
   const [messages, setMessages] = useState(DEFAULT_MESSAGES);
   const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false); // Indicateur de chargement
 
-  const handleSend = () => {
-    if (!input.trim()) return;
+  const handleSend = async () => {
+    if (!input.trim() || loading) return;
 
-    setMessages((prev) => [...prev, { type: "user", content: input }]);
-
-    setTimeout(() => {
-      setMessages((prev) => [
-        ...prev,
-        {
-          type: "ai",
-          content:
-            "Je suis programmé pour répondre comme le propriétaire de ce CV. Que souhaitez-vous savoir sur mon expérience professionnelle, mes compétences ou ma formation ?",
-        },
-      ]);
-    }, 1000);
-
+    const userMessage = { type: "user", content: input };
+    setMessages((prev) => [...prev, userMessage]);
     setInput("");
+    setLoading(true);
+
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message: input }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.response) {
+        setMessages((prev) => [...prev, { type: "ai", content: data.response }]);
+      } else {
+        setMessages((prev) => [...prev, { type: "ai", content: "Je ne peux pas répondre pour le moment." }]);
+      }
+    } catch (error) {
+      console.error("Erreur lors de la requête API :", error);
+      setMessages((prev) => [...prev, { type: "ai", content: "Une erreur est survenue. Réessayez plus tard." }]);
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -84,8 +100,9 @@ export function InteractiveCV() {
           <Button
             onClick={handleSend}
             className="bg-[#00ff99] text-black hover:bg-[#00cc00] p-2 rounded-lg"
+            disabled={loading}
           >
-            <Send className="h-5 w-5" />
+            {loading ? "..." : <Send className="h-5 w-5" />}
           </Button>
         </div>
       </Card>

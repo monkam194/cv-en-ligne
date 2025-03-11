@@ -1,94 +1,104 @@
 "use client";
 
+import { useState } from "react";
+import emailjs from "emailjs-com";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const info = [
-  {
-    icon: <FaPhoneAlt />,
-    title: "Téléphone",
-    description: "(+33) 751 529 035",
-  },
-  {
-    icon: <FaEnvelope />,
-    title: "Email",
-    description: "monkamjose41@gmail.com",
-  },
-  {
-    icon: <FaMapMarkerAlt />,
-    title: "Adresse",
-    description: "Île-de-France, France",
-  },
+  { icon: <FaPhoneAlt />, title: "Téléphone", description: "(+33) 751 529 035" },
+  { icon: <FaEnvelope />, title: "Email", description: "monkamjose41@gmail.com" },
+  { icon: <FaMapMarkerAlt />, title: "Adresse", description: "Île-de-France, France" },
 ];
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    prenom: "",
+    nom: "",
+    email: "",
+    telephone: "",
+    message: "",
+  });
+
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      emailjs.init("EzyX6jOiwgHbF45ZS");
+      await emailjs.send(
+        "service_w9f7wyg",
+        "template_17vwifq",
+        {
+          prenom: formData.prenom,
+          nom: formData.nom,
+          email: formData.email,
+          telephone: formData.telephone,
+          message: formData.message,
+        },
+        "EzyX6jOiwgHbF45ZS"
+      );
+
+      setSuccessMessage("Votre message a été envoyé avec succès !");
+      setFormData({ prenom: "", nom: "", email: "", telephone: "", message: "" });
+    } catch (error) {
+      console.error("Erreur lors de l'envoi :", error);
+    }
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
-      }}
+      animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeIn" } }}
       className="py-6"
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-[30px]">
-          {/* form */}
+          {/* Formulaire */}
           <div className="xl:w-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
               <h3 className="text-4xl text-accent">Travaillons ensemble</h3>
               <p className="text-white/60">
-                Vous avez un projet ou une idée ? N'hésitez pas à me contacter,
-                je serai ravi d'en discuter avec vous.
+                Vous avez un projet ou une idée ? N'hésitez pas à me contacter, je serai ravi d'en discuter avec vous.
               </p>
-              {/* input */}
+
+              {/* Inputs */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="text" placeholder="Prénom" />
-                <Input type="text" placeholder="Nom" />
-                <Input type="email" placeholder="Adresse email" />
-                <Input type="tel" placeholder="Numéro de téléphone" />
+                <Input type="text" name="prenom" value={formData.prenom} onChange={handleChange} placeholder="Prénom" required />
+                <Input type="text" name="nom" value={formData.nom} onChange={handleChange} placeholder="Nom" required />
+                <Input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Adresse email" required />
+                <Input type="tel" name="telephone" value={formData.telephone} onChange={handleChange} placeholder="Numéro de téléphone" />
               </div>
-              {/* select
-              <Select>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Choisissez un service" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Services proposés</SelectLabel>
-                    <SelectItem value="webdev">Développement Web</SelectItem>
-                    <SelectItem value="backend">Développement Back-end</SelectItem>
-                    <SelectItem value="design">UI/UX Design</SelectItem>
-                    <SelectItem value="wordpress">Création de site WordPress</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select> */}
-              {/* textarea */}
+
+              {/* Message */}
               <Textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 className="h-[200px]"
                 placeholder="Décrivez votre projet ou laissez-moi un message."
+                required
               />
-              {/* btn */}
-              <Button size="md" className="max-w-40">
+
+              {/* Bouton d'envoi */}
+              <Button type="submit" size="md" className="max-w-40">
                 Envoyer
               </Button>
+
+              {/* Message de succès */}
+              {successMessage && <p className="text-green-500 mt-4">{successMessage}</p>}
             </form>
           </div>
-          {/* info */}
+
+          {/* Infos */}
           <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
             <ul className="flex flex-col gap-10">
               {info.map((item, index) => (
