@@ -14,29 +14,27 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Etudie l'ingenierie logicielle </span>
+            <span className="text-xl">Etudie l&apos;ingénierie logicielle </span>
             <h1 className="h1 mb-6">
-              je suis <br /> <span className="text-accent">José Monkam</span>
+              Je suis <br /> <span className="text-accent">José Monkam</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
               Passionné par le développement et la résolution de problèmes grâce à l’informatique, je suis à la
-              recherche d'une alternance à partir du 08 février 2025 avec un rythme de 4 jours en entreprise et 1
-              jour à l’école afin de poursuivre mes études en master
+              recherche d&apos;une alternance à partir du 08 février 2025 avec un rythme de 4 jours en entreprise et 1
+              jour à l&apos;école afin de poursuivre mes études en master.
             </p>
             {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-            <Link
-              href="/CVJose.pdf"
-              download
-              target="_blank"
-              rel="noopener noreferrer" // Bonnes pratiques pour la sécurité
-              variant="outline"
-              size="lg"
-              className="uppercase flex items-center gap-2 border border-accent rounded-lg px-4 py-2 text-lg text-accent hover:bg-accent hover:text-primary transition-all duration-500"
+              <a
+                href="/CVJose.pdf"
+                download="CV_Jose_Monkam.pdf"
+                target="_blank"
+                rel="noopener noreferrer" // Bonnes pratiques pour la sécurité
+                className="uppercase flex items-center gap-2 border border-accent rounded-lg px-4 py-2 text-lg text-accent hover:bg-accent hover:text-primary transition-all duration-500"
               >
-              <span>Télecharger mon CV</span>
-              <FiDownload className="text-xl" />
-            </Link>
+                <span>Télécharger mon CV</span>
+                <FiDownload className="text-xl" />
+              </a>
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"
