@@ -7,7 +7,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-const API_URL = "https://mon-api-aspnet-f2ezcsc9chgag6bm.canadacentral-01.azurewebsites.net/api/GroqChat/send-message"; // Remplace par l'URL de ton API ASP.NET
+const API_URL = "https://mon-api-aspnet-f2ezcsc9chgag6bm.canadacentral-01.azurewebsites.net/api/GroqChat/send-message";
 
 const DEFAULT_MESSAGES = [
   {
