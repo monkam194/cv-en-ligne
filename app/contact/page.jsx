@@ -9,7 +9,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const info = [
-  { icon: <FaPhoneAlt />, title: "Téléphone", description: "(+33) 751 529 035" },
+  { icon: <FaPhoneAlt />, title: "Téléphone", description: "(+33) 783 315 366" },
   { icon: <FaEnvelope />, title: "Email", description: "monkamjose41@gmail.com" },
   { icon: <FaMapMarkerAlt />, title: "Adresse", description: "Île-de-France, France" },
 ];
