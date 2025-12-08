@@ -19,9 +19,12 @@ const Home = () => {
               Je suis <br /> <span className="text-accent">José Monkam</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              Passionné par le développement et la résolution de problèmes grâce à l’informatique, je suis à la
-              recherche d&apos;une alternance à partir du 08 février 2025 avec un rythme de 4 jours en entreprise et 1
-              jour à l&apos;école afin de poursuivre mes études en master.
+              Développeur Full Stack orienté back-end, je conçois des interfaces fluides et intuitives tout en
+              garantissant des architectures fiables et sécurisées. À l'aise sur l’ensemble de la chaîne de
+              développement, de l’UI jusqu’à la base de données je suis autonome, curieux et constamment en
+              veille, je m’adapte rapidement aux nouveaux environnements et j’aime collaborer pour
+              transformer les besoins en solutions concrètes et efficaces.
+
             </p>
             {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
